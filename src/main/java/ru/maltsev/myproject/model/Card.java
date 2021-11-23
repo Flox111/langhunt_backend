@@ -17,16 +17,21 @@ public class Card {
     @Column(name = "translated")
     private String translated;
 
+    @Column(name = "image_url")
+    private String imageUrl;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "set_id", referencedColumnName = "set_id")
     private SetOfWords set;
 
-    public Card(){}
+    Card() {
+    }
 
-    public Card(String nativeTranslated, String translated, SetOfWords set) {
+    public Card(String nativeTranslated, String translated, SetOfWords set, String imageUrl) {
         this.nativeTranslated = nativeTranslated;
         this.translated = translated;
         this.set = set;
+        this.imageUrl = imageUrl;
     }
 
     public Long getCardId() {
@@ -59,5 +64,13 @@ public class Card {
 
     public void setSet(SetOfWords set) {
         this.set = set;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

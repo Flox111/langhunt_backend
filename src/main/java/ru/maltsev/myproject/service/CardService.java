@@ -47,7 +47,7 @@ public class CardService {
             if (set.getSetId() == set_id){
                 for (Card card : set.getWords()){
                     response.add(new CardResponse(card.getCardId(),
-                            card.getNativeTranslated(), card.getTranslated()));
+                            card.getNativeTranslated(), card.getTranslated(), card.getImageUrl()));
                 }
                 break;
             }
@@ -62,7 +62,7 @@ public class CardService {
         for (SetOfWords iset: sets){
             if (iset.getSetId() == cardResponse.getSetId()){
                 iset.getWords().add(new Card(cardResponse.getNativeTranslated(),
-                        cardResponse.getTranslated(), iset));
+                        cardResponse.getTranslated(), iset, cardResponse.getImageUrl()));
                 set = iset;
                 break;
             }

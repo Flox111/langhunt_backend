@@ -10,10 +10,13 @@ public class CardResponse {
 
     private Long setId;
 
-    public CardResponse(Long cardId, String nativeTranslated, String translated) {
+    private String imageUrl;
+
+    public CardResponse(Long cardId, String nativeTranslated, String translated, String imageUrl) {
         this.cardId = cardId;
         this.nativeTranslated = nativeTranslated;
         this.translated = translated;
+        this.imageUrl = imageUrl;
     }
 
     public Long getCardId() {
@@ -46,5 +49,13 @@ public class CardResponse {
 
     public void setSetId(Long setId) {
         this.setId = setId;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
